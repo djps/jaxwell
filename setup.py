@@ -36,7 +36,7 @@ setuptools.setup(
     python_requires='>=3.6',
     #install_requires=["numpy>=1.18.5", "jax>=0.2.4"],
     install_requires=read_requirements(".requirements/requirements.txt"),
-    url='https://github.com/stanfordnqp/jaxwell',
+    #url='https://github.com/stanfordnqp/jaxwell',
     license='GNU Lesser General Public License (LGPL)',
     keywords=["jax", "electro-magnetic", "curl-curl", "maxwell", "simulation", "ultrasound", "differentiable-programming"],
     classifiers=[
