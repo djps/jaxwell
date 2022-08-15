@@ -1,7 +1,7 @@
 import io
 import os
 
-from setuptools import find_packages, setup
+import setuptools
 
 
 def read(*paths, **kwargs):
