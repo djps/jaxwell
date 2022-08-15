@@ -1,0 +1,24 @@
+[flake8]
+ignore =
+    E114
+    E111
+    F811
+exclude =
+    .git,
+    .pytest_cache,
+    .requirements,
+    .venv,
+    .vscode,
+    node_modules,
+    jwave.egg-info,
+    __pycache__,
+    build,
+    docs,
+    htmlcov,
+    profiling,
+    scripts,
+    templates
+max-line-length = 127
+max-complexity=10
+count = true
+statistics = true
