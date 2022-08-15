@@ -92,7 +92,7 @@ testenv:          ## Create a test environment.
 	@rm -rf .venv
 	@python3 -m venv .venv
 	@./.venv/bin/pip install -U pip
-	@echo "Instaling jaxwell"
+	@echo "installing jaxwell ..."
 	@./.venv/bin/pip install -e .[test]
 	@echo "!!! Please run 'source .venv/bin/activate' to enable the environment !!!"
 	@echo "--- Don't forget to manually reinstall JAX for GPU/TPU support: https://github.com/google/jax#installation"
