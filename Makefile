@@ -47,8 +47,9 @@ jaxgpu:           ## Installs jax for *nix systems with CUDA
 lint:             ## Runs isort and mypy.
 	@echo "Running isort ..."
 	$(ENV_PREFIX)isort jaxwell/
-	@echo "Running flake8 ..."
+	@echo "Running flake8 once ..."
 	$(ENV_PREFIX)flake8 jaxwell/ --count --select=E9,F63,F7,F82 --show-source --statistics
+	@echo "Running flake8 twice ..."
 	$(ENV_PREFIX)flake8 jaxwell/ --count --ignore=E111 --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 	@echo "Running mypy ..."
 	$(ENV_PREFIX)mypy --allow-redefinition --config-file=pyproject.toml jaxwell/*.py
@@ -100,10 +101,13 @@ testenv:          ## Create a test environment.
 virtualenv:       ## Create a virtual environment. Checks that python > 3.7
 	@echo "creating virtual environment ..."
 	@python -c "import sys; assert sys.version_info >= (3, 7), 'Python 3.8 or higher is required'" || exit 1
+	@echo "remove only other virtual environments ..."
 	@rm -rf .venv
+	@echo "make new virtual environment ..."
 	@python3 -m venv .venv
+	@echo "update pip ..."
 	@./.venv/bin/pip install -U pip
-	@echo "Instaling jaxwell"
+	@echo "installing jaxwell"
 	@./.venv/bin/pip install -e .
 	@echo "!!! Please run 'source .venv/bin/activate' to enable the environment !!!"
 	@echo "--- Don't forget to manually reinstall JAX for GPU/TPU support: https://github.com/google/jax#installation"
