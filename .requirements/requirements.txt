@@ -1,5 +1,6 @@
 numpy >= 1.18.5 
 jax >= 0.2.4
+jaxlib
 matplotlib
 watermark
 coverage
