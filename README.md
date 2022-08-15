@@ -1,5 +1,10 @@
 # Jaxwell: GPU-accelerated, differentiable 3D iterative FDFD electromagnetic solver
 
+[![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)](LICENSE)
+[![Continous Integration](https://github.com/djps/jaxwell/actions/workflows/main.yml/badge.svg)](https://github.com/djps/jaxwell/actions/workflows/main.yml) 
+[![Coverage Status](https://coveralls.io/repos/github/djps/jaxwell/badge.svg)](https://coveralls.io/github/djps/jaxwell) 
+
+
 Jaxwell is [JAX](https://github.com/google/jax) +
 [Maxwell](https://github.com/stanfordnqp/maxwell-b):
 an iterative solver for solving the finite-difference frequency-domain
@@ -9,8 +14,7 @@ enabling nanophotonic inverse design problems to be cast as ML training jobs
 and take advantage of the tsunami of innovations
 in ML-specific hardware, software, and algorithms.
 
-Jaxwell is a finite-difference frequency-domain solver
-that finds solutions to the time-harmonic Maxwell's equations, specifically:
+Jaxwell is a finite-difference frequency-domain solver that finds solutions to the time-harmonic Maxwell's equations, specifically:
 
 ```
 (∇ x ∇ x - ω²ε) E = -iωJ
@@ -40,5 +44,5 @@ References:
 
 - PMLs and diagonalization: [Shin2012] W. Shin and S. Fan. “Choice of the perfectly matched layer boundary condition for frequency-domain Maxwell's equations solvers.” Journal of Computational Physics 231 (2012): 3406–31
 - COCG algorithm: [Gu2014] X. Gu, T. Huang, L. Li, H. Li, T. Sogabe and M. Clemens, "Quasi-Minimal Residual Variants of the COCG and COCR Methods for Complex Symmetric Linear Systems in Electromagnetic Simulations," in IEEE Transactions on Microwave Theory and Techniques, vol. 62, no. 12, pp. 2859-2867, Dec. 2014
-
+ - BiCGStabL algorithm: [Sleijpen1993] G. Sleijpen and D. R. Fokkema. "BiCGstab(l) for linear equations involving unsymmetric matrices with complex spectrum."  Electronic Transactions on Numerical Analysis vol 1, pp. 11-32 (1993).
 
