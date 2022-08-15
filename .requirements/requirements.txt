@@ -1,0 +1,9 @@
+numpy >= 1.18.5 
+jax >= 0.2.4
+matplotlib
+watermark
+coverage
+flake8
+pytest
+coveralls
+pygments
