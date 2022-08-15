@@ -17,8 +17,10 @@ plt.rcParams["figure.dpi"] = 300
 def _get_homog_permittivitiy():
   return 1500.0
 
+
 def _get_homog_permeability():
   return 1500.0
+
 
 def _test_setter(
   N: Tuple[int] = (128,128,128),
@@ -27,8 +29,8 @@ def _test_setter(
   omega: float = 945e6,
   magnitude: float = 1.0,
   src_location: list = (64,64,64),
-  epsilon_constructor = _get_homog_permittivitiy,
-  mu_constructor = _get_homog_permeability,
+  epsilon_constructor = _get_homog_permittivitiy(),
+  mu_constructor = _get_homog_permeability(),
   rel_err = 1e-2,
 ):
   dx = tuple([dx]*len(N))
@@ -68,8 +70,8 @@ def test_maxwell(
   #omega = settings["omega"]
   magnitude = settings["magnitude"]
   src_location = settings["src_location"]
-  rel_permitivity = settings["epsilon_constructor"](domain)
-  rel_permeability = settings["mu_constructor"](domain)
+  rel_permittivity = settings["epsilon_constructor"]
+  rel_permeability = settings["mu_constructor"]
 
   # Move everything to the CPU
   cpu = devices("cpu")[0]
