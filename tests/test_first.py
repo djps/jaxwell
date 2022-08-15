@@ -24,7 +24,7 @@ def _test_setter(
   N: Tuple[int] = (128,128,128),
   dx = 1e-3,
   PMLSize: int = 16,
-  omega: float = 1.5e6,
+  omega: float = 945e6,
   magnitude: float = 1.0,
   src_location: list = (64,64,64),
   epsilon_constructor = _get_homog_permittivitiy,
@@ -64,8 +64,8 @@ def test_maxwell(
   dir_path = os.path.dirname(os.path.realpath(__file__))
 
   # Extract simulation setup
-  domain = Domain(settings["N"], settings["dx"])
-  omega = settings["omega"]
+  #domain = Domain(settings["N"], settings["dx"])
+  #omega = settings["omega"]
   magnitude = settings["magnitude"]
   src_location = settings["src_location"]
   rel_permitivity = settings["epsilon_constructor"](domain)
