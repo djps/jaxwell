@@ -14,11 +14,11 @@ enabling nanophotonic inverse design problems to be cast as ML training jobs
 and take advantage of the tsunami of innovations
 in ML-specific hardware, software, and algorithms.
 
-Jaxwell is a finite-difference frequency-domain solver that finds solutions to the time-harmonic Maxwell's equations, specifically:
+Jaxwell is a finite-difference frequency-domain solver that finds solutions to the time-harmonic form of Maxwell's equations, specifically:
 
-```
-(∇ x ∇ x - ω²ε) E = -iωJ
-```
+$$
+\left( \nabla \times \nabla \times - \omega^2 \varepsilon \right) \boldsymbol{E} = -i \omega \boldsymbol{J}
+$$
 
 for the electric field `E` via the API
 
@@ -26,17 +26,15 @@ for the electric field `E` via the API
 x, err = jaxwell.solve(params, z, b)
 ```
 
-where `E → x`, `ω²ε → z`, `-iωJ → b`, 
-`params` controls how the solve proceeds iteratively, and
-`err` is the error in the solution.
+where `E → x`, `ω²ε → z`, `-iωJ → b`, `params` controls how the solve proceeds iteratively, and `err` is the error in the solution.
 
-Jaxwell uses
+Following [meep](https://meep.readthedocs.io/en/latest/), Jaxwell uses
 [dimensionless units](https://meep.readthedocs.io/en/latest/Introduction/#units-in-meep),
-assumes `μ = 1` everywhere,
-and implements stretched-coordinate perfectly matched layers (SC-PML)
+and assumes `μ = 1` everywhere,
+and implements Shin's stretched-coordinate perfectly matched layers (SC-PML)
 for absorbing boundary conditions.
 
-You can install Jaxwell with `pip install git+https://github.com/stanfordnqp/jaxwell.git` 
+You can install this version of Jaxwell with `pip install git+https://github.com/djps/jaxwell.git` 
 but the easiest way to get started is to go straight to the example 
 [colaboratory notebook](https://colab.research.google.com/gist/JesseLu/1e030fd8ca3fcbca7148cef315bc2ba7/differentiable-jaxwell.ipynb).
 
