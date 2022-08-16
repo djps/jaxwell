@@ -35,7 +35,7 @@ and implements Shin's stretched-coordinate perfectly matched layers (SC-PML)
 for absorbing boundary conditions.
 
 You can install this version of Jaxwell with `pip install git+https://github.com/djps/jaxwell.git` 
-but the easiest way to get started is to go straight to the example 
+but the easiest way to get started is to go straight to the example from the original repository
 [colaboratory notebook](https://colab.research.google.com/gist/JesseLu/1e030fd8ca3fcbca7148cef315bc2ba7/differentiable-jaxwell.ipynb).
 
 References:
