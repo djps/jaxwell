@@ -30,12 +30,12 @@ def monitor_fn(x, errs):
   x = jnp.asarray(x)
 
   # number of spatial dimensions
-  ndims = njp.ndim( np.squeeze(x) ) - 1
+  ndims = jnp.ndim( np.squeeze(x) ) - 1
 
   # index to plot at in x-y plane
-  ind = np.int( np.shape(x[0])[0] // 2 )
+  ind = int( np.shape(x[0])[0] // 2 )
 
-  data = jnp.zeros( jnp.shape(x[0])[1:3], dtype=np.float )
+  data = jnp.zeros( jnp.shape(x[0])[1:3], dtype=float )
   for i in jnp.arange(0,ndims):
     data += x[i][ind,:,:].imag * x[i][ind,:,:].imag + x[i][ind,:,:].real * x[i][ind,:,:].real
 
